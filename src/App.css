@@ -11,13 +11,6 @@
   font-size: 24px;
 }
 
-.carousel-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-}
-
 .note-card {
   width: 70%;
   max-width: 400px;
@@ -27,7 +20,6 @@
   border-radius: 8px;
   text-align: center;
   font-size: 18px;
-  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -36,18 +28,39 @@
 
 .note-card.active {
   display: block;
+  z-index: 1;
 }
 
 .note-card.prev {
   display: block;
   transform: translate(calc(-100% - 10px), -50%);
   opacity: 0.5;
+  z-index: 0;
 }
 
 .note-card.next {
   display: block;
   transform: translate(calc(100% + 10px), -50%);
+  margin-left: -20%;
   opacity: 0.5;
+  z-index: 0;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+.note-cards-container {
+  display: flex;
+}
+
+.carousel-arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #007bff;
 }
 
 .grid-container {
@@ -67,13 +80,6 @@
   font-size: 18px;
 }
 
-.carousel-arrows {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #007bff;
-}
-
 .arrow {
   cursor: pointer;
   font-size: 24px;
@@ -91,3 +97,4 @@
   border-radius: 6px;
   cursor: pointer;
 }
+

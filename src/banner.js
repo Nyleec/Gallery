@@ -3,7 +3,7 @@ import React from 'react';
 const Banner = () => {
   return (
     <div className="banner">
-      Eye-Catching Banner - Your Text Here
+      Hello World
     </div>
   );
 };
