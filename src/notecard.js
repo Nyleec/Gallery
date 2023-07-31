@@ -31,10 +31,11 @@ const NoteCardCarousel = () => {
   };
 
   return (
-    <div className="carousel-container">
+    <div className={`note-card-carousel-container${viewMode === 'grid' ? ' grid-layout' : ''}`}>
       {viewMode === 'carousel' ? (
         <>
-          <div className="note-cards-container">
+          <div className="carousel-container">
+            <div className="note-cards-container">
             <div className="note-card prev">
               {noteCardsData[(currentCardIndex - 1 + noteCardsData.length) % noteCardsData.length]}
             </div>
@@ -44,14 +45,15 @@ const NoteCardCarousel = () => {
             <div className="note-card next">
               {noteCardsData[(currentCardIndex + 1) % noteCardsData.length]}
             </div>
-          </div>
-          <div className="carousel-arrows">
-            <span className="arrow" onClick={prevCard}>&#10094;</span>
-            <span className="arrow" onClick={nextCard}>&#10095;</span>
+            </div>
+            <div className="carousel-arrows">
+              <span className="arrow" onClick={prevCard}>&#10094;</span>
+              <span className="arrow" onClick={nextCard}>&#10095;</span>
+            </div>
           </div>
         </>
       ) : (
-        <NoteCardGrid noteCardsData={noteCardsData} />
+        <NoteCardGrid noteCardsData={noteCardsData} gridLayout={true} />
       )}
 
       <div className="menu-button" onClick={toggleViewMode}>

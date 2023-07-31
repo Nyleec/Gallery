@@ -98,3 +98,18 @@
   cursor: pointer;
 }
 
+.grid-layout .note-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust column size as needed */
+  grid-gap: 10px; /* Gap between grid items */
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.grid-layout .note-card {
+  width: 100%; /* Set the width to fill the entire grid cell */
+  padding: 10px; /* Add padding to create space between cells */
+  border: 1px solid #ddd; /* Add a border to cells for the spreadsheet-like appearance */
+  font-size: 18px;
+  text-align: center;
+}

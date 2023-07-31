@@ -1,11 +1,11 @@
 import React from 'react';
 
-const NoteCardGrid = ({ noteCardsData }) => {
+const NoteCardGrid = ({ noteCardsData, gridLayout }) => {
   return (
-    <div className="grid-container">
-      {noteCardsData.map((noteCard, index) => (
-        <div key={index} className="grid-card">
-          {noteCard}
+    <div className={`grid-container${gridLayout ? ' grid-layout' : ''}`}>
+      {noteCardsData.map((note, index) => (
+        <div className="grid-card" key={index}>
+          {note}
         </div>
       ))}
     </div>
