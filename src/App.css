@@ -98,31 +98,3 @@
   cursor: pointer;
 }
 
-@media screen and (max-height: 60vh) {
-  .note-card-carousel-container {
-    height: auto;
-  }
-
-  .note-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    margin-top: 20px;
-    justify-items: center;
-  }
-
-  .note-card {
-    position: static;
-    transform: none;
-    display: block;
-    margin: 10px auto;
-  }
-
-  .carousel-arrows {
-    display: none;
-  }
-
-  .note-card.next {
-    margin-left: 0;
-  }
-}
