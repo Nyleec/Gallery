@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NoteCardGrid from './NoteCardGrid'; // Import the NoteCardGrid component
+import Papa from 'papaparse';
 
 const NoteCardCarousel = () => {
-  const noteCardsData = [
-    "Note Card 1",
-    "Note Card 2",
-    "Note Card 3",
-    // Add more note cards as needed
-  ];
-
+  const [noteCardsData, setNoteCardsData] = useState([]);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [viewMode, setViewMode] = useState('carousel'); // Added viewMode state
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('/data.csv'); // Assuming the data.csv file is in the public folder
+      const csvData = await response.text();
+      const parsedData = Papa.parse(csvData).data;
+      setNoteCardsData(parsedData.flat()); // Convert 2D array to a flat array
+    };
+
+    fetchData();
+  }, []);
 
   const nextCard = () => {
     setCurrentCardIndex((currentCardIndex + 1) % noteCardsData.length);
