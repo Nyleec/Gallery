@@ -1,0 +1,62 @@
+/* App.css */
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.note-card {
+  width: 70%;
+  max-width: 400px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.note-card.active {
+  display: block;
+}
+
+.note-card.prev {
+  transform: translate(calc(-100% - 10px), -50%);
+  opacity: 0.5;
+}
+
+.note-card.next {
+  transform: translate(calc(100% + 10px), -50%);
+  opacity: 0.5;
+}
+
+
+.carousel-arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 24px;
+  margin: 0 10px;
+}
