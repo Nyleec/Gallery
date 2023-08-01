@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import NoteCardGrid from './NoteCardGrid'; // Import the NoteCardGrid component
 import Papa from 'papaparse';
+import Menu from './menu'
 
 const NoteCardCarousel = () => {
   const [noteCardsData, setNoteCardsData] = useState([]);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [viewMode, setViewMode] = useState('carousel'); // Added viewMode state
-  const [maximizedCardIndex, setMaximizedCardIndex] = useState(null);
+  //const [maximizedCardIndex, setMaximizedCardIndex] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,6 +59,7 @@ const NoteCardCarousel = () => {
               <span className="arrow" onClick={prevCard}>&#10094;</span>
               <span className="arrow" onClick={nextCard}>&#10095;</span>
             </div>
+            <Menu noteCardsData={noteCardsData} setNoteCardsData={setNoteCardsData} />
           </div>
         </>
       ) : (
