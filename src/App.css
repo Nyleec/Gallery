@@ -1,6 +1,6 @@
 /* App.css */
 .coloredDiv {
-  background-color: darkgreen;
+  background-color: white;
   height: 95%;
   top: 0;
   right: 0;
@@ -18,9 +18,9 @@
 .banner {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white;
+  left: 25%;
+  width: 75%;
+  background-color: darkgreen;
   padding: 10px;
   text-align: center;
   font-size: 24px;
@@ -146,34 +146,21 @@
   top: 0;
   height: 100%;
   width: 25%;
-  background-color: #fff; /* Set the background color of the menu */
+  background-color: darkgray; /* Set the background color of the menu */
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2); /* Shadow on the left border */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
+  z-index: 0;
 }
-
 /* CSS for the Menu Buttons */
 .menu button {
   height: calc(20% - 10px); /* 1/5 height of the window with 10px spacing */
   width: 100%;
-  background-color: white; /* Set the background color of the buttons */
-  cursor: pointer;
+  background-color: darkgray; /* Set the background color of the buttons */
   border: none;
-}
-
-.menu {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none; /* Prevent buttons from capturing clicks */
 }
 
 .menu-button:hover {
