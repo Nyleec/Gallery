@@ -29,6 +29,7 @@ const Menu = ({ noteCardsData, setNoteCardsData }) => {
 
   return (
     <div className="menu">
+      <div className='menuContainer'>
       <button>Messages</button>
 
       <button className="addMessage" onClick={() => setShowTextInput(true)}>
@@ -49,6 +50,7 @@ const Menu = ({ noteCardsData, setNoteCardsData }) => {
       <button>Gallery??</button>
       <button>Couple's Cash App</button>
       <button>LeeC's Cash App</button>
+      </div>
     </div>
   );
 };

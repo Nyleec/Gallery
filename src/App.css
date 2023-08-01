@@ -1,13 +1,13 @@
 /* App.css */
 /*wrapper Divs*/
 .coloredDiv {
-  background-color: white;
-  height: calc(90% - 10px);
-  top: 5%;
-  right: 0;
-  width: 75%;
-  padding: 20px;
   position: fixed;
+  top: 5%;
+  left:20%;
+  width: 80%;
+  height: calc(90% - 10px);
+  padding: 10px;
+  background-color: white;
   z-index: 0;
 }
 
@@ -20,9 +20,9 @@
 .banner {
   position: fixed;
   top: 0;
-  left: 25%;
+  left: 20%;
   height:calc(5%);
-  width: 75%;
+  width: 80%;
   background-color: darkgreen;
   padding: 10px;
   text-align: center;
@@ -57,6 +57,8 @@
 }
 
 .note-card.prev {
+  background-color: black; /* Replace with your desired background color */
+  color: goldenrod;
   display: block;
   transform: translate(calc(-100% - 10px), -50%);
   opacity: .5;
@@ -64,6 +66,8 @@
 }
 
 .note-card.next {
+  background-color: black; /* Replace with your desired background color */
+  color: goldenrod;
   display: block;
   transform: translate(calc(100% + 10px), -50%);
   margin-left: -30%;
@@ -71,7 +75,11 @@
   z-index: 0;
 }
 
-/*Carousel containers*/
+/*.note-card.child{
+  background-color: black;
+}*/
+
+/* containers*/
 .carousel-container {
   display: flex;
   justify-content: center;
@@ -85,6 +93,7 @@
   margin-top: 20px;
   justify-items: center;
 }
+
 /* Arrows...not used anymore */
 .carousel-arrows {
   display: flex;
@@ -150,7 +159,7 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 25%;
+  width: 20%;
   background-color: darkgray; /* Set the background color of the menu */
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2); /* Shadow on the left border */
   display: flex;
@@ -160,9 +169,16 @@
   pointer-events: none;
   z-index: 0;
 }
+
+.menuContainer {
+  position: fixed;
+  height:calc(75%);
+  top: 25%;
+}
+
 /* CSS for the Menu Buttons */
 .menu button {
-  height: calc(20% - 10px); /* 1/5 height of the window with 10px spacing */
+  height: calc(15% - 10px); /* 1/5 height of the window with 10px spacing */
   width: 100%;
   background-color: darkgray; /* Set the background color of the buttons */
   border: none;
