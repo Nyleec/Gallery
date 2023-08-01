@@ -31,19 +31,20 @@ const NoteCardCarousel = () => {
   };
 
   return (
+    <div className='coloredDiv'>
     <div className={`note-card-carousel-container${viewMode === 'grid' ? ' grid-layout' : ''}`}>
       {viewMode === 'carousel' ? (
         <>
           <div className="carousel-container">
             <div className="note-cards-container">
-            <div className="note-card prev">
-              {noteCardsData[(currentCardIndex - 1 + noteCardsData.length) % noteCardsData.length]}
+            <div className="note-card prev" onClick={prevCard}>
+              <div className='note-card child'>{noteCardsData[(currentCardIndex - 1 + noteCardsData.length) % noteCardsData.length]}</div>
             </div>
             <div className={`note-card ${currentCardIndex === 0 ? 'active' : ''}`}>
-              {noteCardsData[currentCardIndex]}
+              <div className='note-card child'>{noteCardsData[currentCardIndex]}</div>
             </div>
-            <div className="note-card next">
-              {noteCardsData[(currentCardIndex + 1) % noteCardsData.length]}
+            <div className="note-card next" onClick={nextCard}>
+              <div className='note-card child'> {noteCardsData[(currentCardIndex + 1) % noteCardsData.length]}</div> 
             </div>
             </div>
             <div className="carousel-arrows">
@@ -59,6 +60,7 @@ const NoteCardCarousel = () => {
       <div className="menu-button" onClick={toggleViewMode}>
         {viewMode === 'carousel' ? 'Switch to Grid View' : 'Switch to Carousel View'}
       </div>
+    </div>
     </div>
   );
 };

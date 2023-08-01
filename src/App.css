@@ -1,17 +1,29 @@
 /* App.css */
+.coloredDiv {
+  background-color: darkgreen;
+  height: 95%;
+  top: 0;
+  right: 0;
+  width: 75%;
+  padding: 20px;
+  position: fixed;
+  z-index: 0;
+}
+
 .banner {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #007bff;
-  color: #fff;
+  background-color: white;
   padding: 10px;
   text-align: center;
   font-size: 24px;
+  z-index: 1;
 }
 
 .note-card {
+  height: 70%;
   width: 70%;
   max-width: 400px;
   background-color: #f0f0f0;
@@ -24,6 +36,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .note-card.active {
@@ -41,7 +56,7 @@
 .note-card.next {
   display: block;
   transform: translate(calc(100% + 10px), -50%);
-  margin-left: -20%;
+  margin-left: -30%;
   opacity: 0.5;
   z-index: 0;
 }
@@ -112,4 +127,45 @@
   border: 1px solid #ddd; /* Add a border to cells for the spreadsheet-like appearance */
   font-size: 18px;
   text-align: center;
+}
+
+/* CSS for the Menu */
+.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 25%;
+  background-color: #fff; /* Set the background color of the menu */
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2); /* Shadow on the left border */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CSS for the Menu Buttons */
+.menu button {
+  height: calc(20% - 10px); /* 1/5 height of the window with 10px spacing */
+  width: 100%;
+  background-color: white; /* Set the background color of the buttons */
+  cursor: pointer;
+  border: none;
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none; /* Prevent buttons from capturing clicks */
+}
+
+.menu-button:hover {
+  background-color: #0056b3; /* Set the background color of the buttons on hover */
 }
