@@ -32,9 +32,7 @@ const Menu = ({ noteCardsData, setNoteCardsData }) => {
       <div className='menuContainer'>
       <button>Messages</button>
 
-      <button className="addMessage" onClick={() => setShowTextInput(true)}>
-        Menu Button 1
-      </button>
+      <button className="addMessage" onClick={() => setShowTextInput(true)}> Add Message </button>
       {showTextInput && (
         <div className="addMessage">
           <input
