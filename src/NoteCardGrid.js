@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const NoteCardGrid = ({ noteCardsData, gridLayout }) => {
+const NoteCardGrid = ({ noteCardsData, onCardClick }) => {
   return (
-    <div className={`grid-container${gridLayout ? ' grid-layout' : ''}`}>
-      {noteCardsData.map((note, index) => (
-        <div className="grid-card" key={index}>
-          {note}
+    <div className="grid-container">
+      {noteCardsData.map((noteCard, index) => (
+        <div className="grid-card" key={index} onClick={() => onCardClick(index)}>
+          {noteCard}
         </div>
       ))}
     </div>

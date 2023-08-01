@@ -6,6 +6,7 @@ const NoteCardCarousel = () => {
   const [noteCardsData, setNoteCardsData] = useState([]);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [viewMode, setViewMode] = useState('carousel'); // Added viewMode state
+  const [maximizedCardIndex, setMaximizedCardIndex] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +29,12 @@ const NoteCardCarousel = () => {
 
   const toggleViewMode = () => {
     setViewMode(prevMode => (prevMode === 'carousel' ? 'grid' : 'carousel'));
+    //setMaximizedCardIndex(null); // Reset the maximized card index when switching views
+  };
+
+  const handleCardClick = (index) => {
+    setViewMode('carousel'); // Switch to carousel view when a card is clicked
+    setCurrentCardIndex(index);// switches the clicked card index to be shown in carousel
   };
 
   return (
@@ -36,7 +43,7 @@ const NoteCardCarousel = () => {
       {viewMode === 'carousel' ? (
         <>
           <div className="carousel-container">
-            <div className="note-cards-container">
+            <div className="note-cards-container" >
             <div className="note-card prev" onClick={prevCard}>
               <div className='note-card child'>{noteCardsData[(currentCardIndex - 1 + noteCardsData.length) % noteCardsData.length]}</div>
             </div>
@@ -54,7 +61,7 @@ const NoteCardCarousel = () => {
           </div>
         </>
       ) : (
-        <NoteCardGrid noteCardsData={noteCardsData} gridLayout={true} />
+        <NoteCardGrid noteCardsData={noteCardsData} gridLayout={true} onCardClick={handleCardClick} />
       )}
 
       <div className="menu-button" onClick={toggleViewMode}>
