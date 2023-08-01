@@ -117,8 +117,8 @@
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
-  background-color: #007bff; /* Replace with your desired background color */
-  color: #fff; /* Replace with your desired text color */
+  background-color: black; /* Replace with your desired background color */
+  color: goldenrod; /* Replace with your desired text color */
   border-radius: 6px;
   cursor: pointer;
 }
